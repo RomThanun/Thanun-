@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="km">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>មជ្ឈមណ្ឌលបង្រៀនគួរ ឆ្ពោះទៅជោគជ័យ - Educational Excellence</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Kantumruy+Pro:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&family=Kantumruy+Pro:wght@100..900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind via CDN + custom config -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed": "#2a1700",
+            "outline": "#737686",
+            "tertiary-container": "#996100",
+            "on-error": "#ffffff",
+            "on-primary-fixed": "#00174b",
+            "on-primary-container": "#eeefff",
+            "secondary": "#5d5f5f",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#ffeedd",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#e1e2e4",
+            "background": "#f8f9fb",
+            "primary-fixed-dim": "#b4c5ff",
+            "on-tertiary": "#ffffff",
+            "surface-tint": "#0053db",
+            "primary": "#004ac6",
+            "surface-bright": "#f8f9fb",
+            "on-secondary-fixed": "#1a1c1c",
+            "tertiary": "#784b00",
+            "inverse-on-surface": "#f0f1f3",
+            "primary-container": "#2563eb",
+            "inverse-surface": "#2e3132",
+            "outline-variant": "#c3c6d7",
+            "on-primary": "#ffffff",
+            "inverse-primary": "#b4c5ff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-container": "#edeef0",
+            "tertiary-fixed": "#ffddb8",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#616363",
+            "surface-dim": "#d9dadc",
+            "on-surface-variant": "#434655",
+            "secondary-fixed-dim": "#c6c6c7",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-background": "#191c1e",
+            "secondary-container": "#dfe0e0",
+            "on-primary-fixed-variant": "#003ea8",
+            "surface-variant": "#e1e2e4",
+            "surface-container-low": "#f3f4f6",
+            "surface": "#f8f9fb",
+            "on-surface": "#191c1e",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#e2e2e2",
+            "on-secondary-fixed-variant": "#454747",
+            "primary-fixed": "#dbe1ff",
+            "surface-container-high": "#e7e8ea",
+            "surface-container-lowest": "#ffffff"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            base: "4px",
+            "max-width": "1280px",
+            "margin-mobile": "16px",
+            gutter: "24px",
+            "margin-desktop": "64px"
+          },
+          fontFamily: {
+            "body-lg": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "headline-lg": ["Be Vietnam Pro"],
+            "headline-md": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "display-kh": ["Kantumruy Pro"],
+            "headline-lg-mobile": ["Be Vietnam Pro"]
+          },
+          fontSize: {
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "display-kh": ["42px", { lineHeight: "1.2", fontWeight: "700" }],
+            "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }]
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom styles / utilities -->
+  <style>
+    /* Material Icons variable */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Card shadows and lifts */
+    .soft-card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    }
+    .hover-lift {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Hide scrollbar for carousel */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+
+  <!-- ====== NAVBAR ====== -->
+  <nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-md shadow-sm transition-shadow">
+    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-max-width mx-auto">
+      <a class="font-display-kh text-[20px] md:text-headline-md text-primary font-bold cursor-pointer transition-transform active:scale-95" href="#">
+        មជ្ឈមណ្ឌលបង្រៀនគួរ ឆ្ពោះទៅជោគជ័យ
+      </a>
+
+      <!-- desktop nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-primary font-bold border-b-2 border-primary font-body-md py-1" href="#courses">វគ្គសិក្សា</a>
+        <a class="text-secondary hover:text-primary transition-colors font-body-md" href="#books">សៀវភៅ</a>
+        <a class="text-secondary hover:text-primary transition-colors font-body-md" href="#teachers">គ្រូបង្រៀន</a>
+        <a class="text-secondary hover:text-primary transition-colors font-body-md" href="#schedule">កាលវិភាគ</a>
+        <a class="text-secondary hover:text-primary transition-colors font-body-md" href="#contact">ទាក់ទង</a>
+      </div>
+
+      <a class="hidden md:block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:bg-primary-container transition-all active:scale-95 shadow-sm" href="#register">
+        ចុះឈ្មោះឥឡូវនេះ
+      </a>
+
+      <!-- mobile menu button -->
+      <button class="md:hidden text-primary" aria-label="menu">
+        <span class="material-symbols-outlined text-[32px]">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <header class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="w-full h-full bg-cover bg-center opacity-10 blur-[2px]"
+      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAplHnNZ-_FcApNZ6gwwefSEQLIjM6Bxn2sBg16PKcL6EDyP1IJpoK00wHKW2xOt0FM61Ac93565U69gTqQYACs-t8LJUSkySy8sserNuWowNWYAsALeqPYxVSqydr-od3viVyb2GtRm1rznbUy8bcKIQhH73G3QHziLvVpzH6YihhkzuFv-W-TgPdkWuFd7itWmIbIR267znf1blNZcQ_AvWW0fjh0Jtv2AtYH67b_E3Q4QH1B16AU3rtSrCMrLW4Wffzp_DuGU-NP')">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+  </div>
+
+  <div class="relative z-10 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center">
+    <h1 class="font-display-kh text-display-kh mb-6 leading-tight max-w-4xl mx-auto">
+      បង្កើនចំណេះដឹង បង្កើនទំនុកចិត្ត <span class="text-primary">ឆ្ពោះទៅជោគជ័យ</span>
+    </h1>
+    <p class="font-body-lg text-body-lg text-secondary mb-10 max-w-2xl mx-auto">
+      មជ្ឈមណ្ឌលបង្រៀនគួរដែលផ្តល់ការបង្រៀនប្រកបដោយគុណភាព សម្រាប់គ្រប់កម្រិតសិក្សា ជាមួយគ្រូជំនាញៗ។
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a class="w-full sm:w-auto bg-primary text-on-primary px-10 py-4 rounded-xl font-label-md text-lg hover:bg-primary-container shadow-lg transition-all hover:-translate-y-1 active:scale-95" href="#register">
+        ចុះឈ្មោះឥឡូវនេះ
+      </a>
+      <a class="w-full sm:w-auto border-2 border-primary text-primary px-10 py-4 rounded-xl font-label-md text-lg hover:bg-primary/5 transition-all active:scale-95" href="#courses">
+        មើលវគ្គសិក្សា
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ====== WHY CHOOSE US ====== -->
+<section class="py-20 md:py-32 bg-surface-container-low">
+  <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="text-center mb-16 reveal">
+      <h2 class="font-display-kh text-headline-lg md:text-headline-lg mb-4">ហេតុអ្វីជ្រើសរើសយើង?</h2>
+      <div class="h-1.5 w-24 bg-primary mx-auto rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+      <div class="bg-surface-container-lowest p-8 rounded-xl soft-card-shadow hover-lift reveal">
+        <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">school</span>
+        </div>
+        <h3 class="font-headline-md mb-3">គ្រូបង្រៀនមានបទពិសោធន៍</h3>
+        <p class="text-secondary leading-relaxed">ក្រុមគ្រូឧទ្ទេសដែលមានបទពិសោធន៍បង្រៀនច្រើនឆ្នាំ និងមានជំនាញច្បាស់លាស់។</p>
+      </div>
+
+      <div class="bg-surface-container-lowest p-8 rounded-xl soft-card-shadow hover-lift reveal" style="transition-delay: 100ms;">
+        <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+        </div>
+        <h3 class="font-headline-md mb-3">មេរៀនស្របតាមកម្មវិធីសិក្សា</h3>
+        <p class="text-secondary leading-relaxed">ឯកសារមេរៀនត្រូវបានចងក្រងយ៉ាងផ្ចិតផ្ចង់ ស្របតាមកម្មវិធីសិក្សារបស់ក្រសួង។</p>
+      </div>
+
+      <div class="bg-surface-container-lowest p-8 rounded-xl soft-card-shadow hover-lift reveal" style="transition-delay: 200ms;">
+        <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">analytics</span>
+        </div>
+        <h3 class="font-headline-md mb-3">តាមដានការសិក្សាជាប្រចាំ</h3>
+        <p class="text-secondary leading-relaxed">យើងតាមដានវត្តមាន និងលទ្ធផលសិក្សារបស់សិស្សម្នាក់ៗ ដើម្បីផ្ដល់ព័ត៌មានដល់អាណាព្យាបាល។</p>
+      </div>
+
+      <div class="bg-surface-container-lowest p-8 rounded-xl soft-card-shadow hover-lift reveal" style="transition-delay: 300ms;">
+        <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">quiz</span>
+        </div>
+        <h3 class="font-headline-md mb-3">មានតេស្តវាស់សមត្ថភាព</h3>
+        <p class="text-secondary leading-relaxed">ការប្រឡងវាស់សមត្ថភាពប្រចាំខែ និងប្រចាំវគ្គ ដើម្បីពង្រឹងគុណភាពសិក្សា។</p>
+      </div>
+
+      <div class="bg-surface-container-lowest p-8 rounded-xl soft-card-shadow hover-lift reveal" style="transition-delay: 400ms;">
+        <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+        </div>
+        <h3 class="font-headline-md mb-3">មានវិញ្ញាបនបត្របញ្ចប់វគ្គ</h3>
+        <p class="text-secondary leading-relaxed">ទទួលបានវិញ្ញាបនបត្របញ្ជាក់ការសិក្សាដែលមានតម្លៃស្របច្បាប់ក្រោយបញ្ចប់វគ្គ។</p>
+      </div>
+
+      <div class="bg-surface-container-lowest p-8 rounded-xl soft-card-shadow hover-lift reveal" style="transition-delay: 500ms;">
+        <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+        </div>
+        <h3 class="font-headline-md mb-3">បរិយាកាសសិក្សាល្អ</h3>
+        <p class="text-secondary leading-relaxed">បន្ទប់រៀនមានផាសុកភាព ស្ងប់ស្ងាត់ និងបំពាក់ដោយឧបករណ៍ទំនើបៗ។</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== COURSES ====== -->
+<section class="py-20 md:py-32" id="courses">
+  <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="text-center mb-16 reveal">
+      <h2 class="font-display-kh text-headline-lg mb-4">វគ្គសិក្សា</h2>
+      <p class="text-secondary max-w-xl mx-auto">ជ្រើសរើសវគ្គសិក្សាដែលសាកសមសម្រាប់អ្នក ដើម្បីឈានទៅរកភាពជោគជ័យ</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+
+      <!-- Course 1 -->
+      <div class="bg-surface-container-lowest rounded-2xl overflow-hidden soft-card-shadow hover-lift reveal border border-outline-variant/30 flex flex-col">
+        <div class="h-48 relative">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsZb3xaSntOZ49CHbg_nf2AffA0V-DMi1wzr7wTWJ6vAGPaCIKeKBq8OJspS-nSovg6OUs3yXN79RE5v_REsiPRP9l3FBZByoLKANyaBX8n6JtQhUV6tFOZQ-AaGclsgYk-M_em0hF6Wb2qpKp76onLf7V9PejqnZeAtGg4-3qio0Z22C3iusWtadmI_7JZJRNHMkkRio1hVvtxbhljcTYE4Iz3zAHn7qkMzHgHAx47GMXqMsm1-6TPY0AGz0A56JI1Vam0F6q4xFw" alt="Basic course illustration" />
+          <div class="absolute top-4 right-4 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full font-label-md">$50</div>
+        </div>
+        <div class="p-8 flex-grow">
+          <h3 class="font-headline-md mb-2">កម្រិតមូលដ្ឋាន</h3>
+          <p class="text-label-md text-primary font-bold mb-4">រយៈពេល: ៣ ខែ</p>
+          <p class="text-secondary mb-6 line-clamp-3">សម្រាប់សិស្សដែលចង់ពង្រឹងចំណេះដឹងមូលដ្ឋានគ្រឹះឱ្យបានរឹងមាំ ដើម្បីត្រៀមខ្លួនសម្រាប់កម្រិតបន្ត។</p>
+          <div class="space-y-2 mb-8">
+            <div class="flex items-center gap-2 text-label-md text-secondary">
+              <span class="material-symbols-outlined text-sm">calendar_today</span> ច័ន្ទ - សុក្រ
+            </div>
+            <div class="flex items-center gap-2 text-label-md text-secondary">
+              <span class="material-symbols-outlined text-sm">schedule</span> ០៨:០០ - ១០:០០ ព្រឹក
+            </div>
+          </div>
+          <button class="w-full py-3 bg-primary text-on-primary rounded-xl font-label-md hover:bg-primary-container transition-all">ចុះឈ្មោះឥឡូវនេះ</button>
+        </div>
+      </div>
+
+      <!-- Course 2 -->
+      <div class="bg-surface-container-lowest rounded-2xl overflow-hidden soft-card-shadow hover-lift reveal border border-outline-variant/30 flex flex-col" style="transition-delay: 100ms;">
+        <div class="h-48 relative">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2U65J9LqUHVof7gvdj0iYQbXnS7B6l2EDQAjZtI9TzeJ66C3tDa8QdTerpDH04ZggOoFQ6S4DadqmTY3UvGucggWrEIS2oFXzJLYgs1-AIB7qIo5xmTNICb3Mx1xkKuI0RH6JQ6mmQGYh6kzBSLn2b6dgAaJoZC1_8H_Minh-H2NZXKO6-9py2B3fwfEoZiRqk8PYSt3mQxrTbq48OW7TsC3fOW-9OkBlFin_0s3ktALo15wIlPt3Z7aHbXP5yVl8zR_PfVWcfWeN" alt="Intermediate course illustration" />
+          <div class="absolute top-4 right-4 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full font-label-md">$80</div>
+        </div>
+        <div class="p-8 flex-grow">
+          <h3 class="font-headline-md mb-2">កម្រិតមធ្យម</h3>
+          <p class="text-label-md text-primary font-bold mb-4">រយៈពេល: ៤ ខែ</p>
+          <p class="text-secondary mb-6 line-clamp-3">ផ្តោតលើការអនុវត្តលំហាត់ និងមេរៀនស៊ីជម្រៅ សម្រាប់ពង្រឹងសមត្ថភាពក្នុងការប្រឡងប្រចាំខែ។</p>
+          <div class="space-y-2 mb-8">
+            <div class="flex items-center gap-2 text-label-md text-secondary">
+              <span class="material-symbols-outlined text-sm">calendar_today</span> ច័ន្ទ - សុក្រ
+            </div>
+            <div class="flex items-center gap-2 text-label-md text-secondary">
+              <span class="material-symbols-outlined text-sm">schedule</span> ០២:០០ - ០៤:០០ រសៀល
+            </div>
+          </div>
+          <button class="w-full py-3 bg-primary text-on-primary rounded-xl font-label-md hover:bg-primary-container transition-all">ចុះឈ្មោះឥឡូវនេះ</button>
+        </div>
+      </div>
+
+      <!-- Course 3 -->
+      <div class="bg-surface-container-lowest rounded-2xl overflow-hidden soft-card-shadow hover-lift reveal border border-outline-variant/30 flex flex-col" style="transition-delay: 200ms;">
+        <div class="h-48 relative">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0ATmZpp15rHIQJW-CSBFKuifKZW_VUPDife1WLBmlUINSXpWJUEYB3CLX2VtX_P50JMLEVsr1UUCBXBfC90876nygD9O-rZTfB897S5WoILzjuWJ-xAMvh0FoaMWl80aSKUQ8rAKvgQ4Kpr07efd_-zhysZ9DB6Jxq9eJxMRjregVYVzG3j888COQVrYx_akK1_SfftIt7_tJbMPwxEOQA5UAgGcNt8bqNIPsz4B-3hVXeDU4GUIeXzULeH6rQIN-XIo45Gf61Ojd" alt="Advanced course illustration" />
+          <div class="absolute top-4 right-4 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full font-label-md">$120</div>
+        </div>
+        <div class="p-8 flex-grow">
+          <h3 class="font-headline-md mb-2">កម្រិតខ្ពស់</h3>
+          <p class="text-label-md text-primary font-bold mb-4">រយៈពេល: ៦ ខែ</p>
+          <p class="text-secondary mb-6 line-clamp-3">វគ្គពិសេសសម្រាប់ត្រៀមប្រឡងសញ្ញាបត្រមធ្យមសិក្សាទុតិយភូមិ និងការប្រឡងអាហារូបករណ៍ធំៗ។</p>
+          <div class="space-y-2 mb-8">
+            <div class="flex items-center gap-2 text-label-md text-secondary">
+              <span class="material-symbols-outlined text-sm">calendar_today</span> ច័ន្ទ - សុក្រ
+            </div>
+            <div class="flex items-center gap-2 text-label-md text-secondary">
+              <span class="material-symbols-outlined text-sm">schedule</span> ០៦:០០ - ០៨:០០ យប់
+            </div>
+          </div>
+          <button class="w-full py-3 bg-primary text-on-primary rounded-xl font-label-md hover:bg-primary-container transition-all">ចុះឈ្មោះឥឡូវនេះ</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== BOOKS ====== -->
+<section class="py-20 md:py-32 bg-surface-container-low" id="books">
+  <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-4 reveal">
+      <div>
+        <h2 class="font-display-kh text-headline-lg mb-2">សៀវភៅ និងឯកសារសិក្សា</h2>
+        <p class="text-secondary">ទាញយកឯកសារមេរៀន និងលំហាត់អនុវត្តន៍ដោយសេរី</p>
+      </div>
+      <button class="text-primary font-label-md flex items-center gap-1 hover:underline">
+        មើលទាំងអស់ <span class="material-symbols-outlined">arrow_forward</span>
+      </button>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-gutter">
+
+      <div class="group cursor-pointer reveal">
+        <div class="aspect-[3/4] rounded-xl overflow-hidden soft-card-shadow mb-4 relative transition-transform group-hover:-translate-y-2">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDFBOivIEnyF3dCV-CxWSuEy3o1clULJpyakR_45VnFYPwW9pn7S9m7NEC_YN9UR6A9SseBhUsthvMjSUsl4lc3rwz0DiUgce7GHxqUNGikKfZWM2ODlI-24hgJTrTOZsrQijYWruP_c8IaP_Kk20rICtA581iDIUm19K5XzbJJ4VVHXB2NYw3xPaKU4h463lE2lks1iY86UQovIUgUGab4lBdtsuEucEZRRQbwwG5L1GXjz_FW9U1M7qoXW7dwjw3t1ZVzvv6GOM0" alt="Mathematics book" />
+          <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <button class="w-12 h-12 bg-on-primary text-primary rounded-full flex items-center justify-center shadow-lg">
+              <span class="material-symbols-outlined">download</span>
+            </button>
+          </div>
+        </div>
+        <h4 class="font-label-md text-center line-clamp-1">គណិតវិទ្យា ថ្នាក់ទី១២</h4>
+      </div>
+
+      <div class="group cursor-pointer reveal" style="transition-delay: 50ms;">
+        <div class="aspect-[3/4] rounded-xl overflow-hidden soft-card-shadow mb-4 relative transition-transform group-hover:-translate-y-2">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8AZuWRsfZoNTXwlF1HW08A4ZbhHRHYc97eM0XlgID0ARHYqku83hsT4_NZfYauxcaI9ClRwJzvuxXt3xRU5xB-OaTsjAb_8tMc_IFCKLdSUMgxQyBYd7hA9iFsgq7ENezOJpaO4xBqyY3kQbcEOrUXYM4mMKKnff4F92qtACzgao23HBUfBBzXbixenMe44bnVVFJlhK7-Tt93buTI35hs4-6EB5xCBlXSq41tiFJQlrnuUJjX7rVhb2l98DtbCyXp_r8AnHZKrf5" alt="Physics book" />
+          <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <button class="w-12 h-12 bg-on-primary text-primary rounded-full flex items-center justify-center shadow-lg">
+              <span class="material-symbols-outlined">download</span>
+            </button>
+          </div>
+        </div>
+        <h4 class="font-label-md text-center line-clamp-1">រូបវិទ្យា កម្រងលំហាត់</h4>
+      </div>
+
+      <div class="group cursor-pointer reveal" style="transition-delay: 100ms;">
+        <div class="aspect-[3/4] rounded-xl overflow-hidden soft-card-shadow mb-4 relative transition-transform group-hover:-translate-y-2">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9kaK2xQu_nyd5sG2gMfVECME_LNGWdmnODjLt1zPxet6i2NDttcbsCU0Wo2LIfM2f1SWb0TOUyHqJBUhGUAQxzNF3GxqmmE2fW8VKI0pxxBhJO7dm-LelWHjNxfHIkKa13k7pjJQqBr5BAZiQ0oPrhcsPkf2DGHzmxhSer9fw3TRp3yYtG9455cC30-f0MBGZ6qZme9HPznB9hWj3UwEDYCFRuQ2GDNH7gvHq1ltCeMa0Vv7EAT8rQQjP1sckK8073oGa_6zAHnjE" alt="Chemistry book" />
+          <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <button class="w-12 h-12 bg-on-primary text-primary rounded-full flex items-center justify-center shadow-lg">
+              <span class="material-symbols-outlined">download</span>
+            </button>
+          </div>
+        </div>
+        <h4 class="font-label-md text-center line-clamp-1">គីមីវិទ្យា សម័យទំនើប</h4>
+      </div>
+
+      <div class="group cursor-pointer reveal" style="transition-delay: 150ms;">
+        <div class="aspect-[3/4] rounded-xl overflow-hidden soft-card-shadow mb-4 relative transition-transform group-hover:-translate-y-2">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXQznnqxns7_eanIRmg3TsScosKBkPLntMELD5poI6K9HFFQmLRk8gu1X49V4ktpKaehVpHweHdlivGl4N1spW1rRg7BmIhZQMnYne7dJy2Cqr-26LPo9ggT8Opq5g9_JIb4ymrGY6PMCZsSwlHVLIw5hp7YuGDfGYa9I6Uio6-sD721KaIWdf6MJEL9nailp_gM0GqR9ALeClDlOIH0zMw0Al3boKA0-sKOJNZuGQc3LF-v8WJ0FWp3OJkSVg7-qka3BPikqYlP_X" alt="Biology book" />
+          <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <button class="w-12 h-12 bg-on-primary text-primary rounded-full flex items-center justify-center shadow-lg">
+              <span class="material-symbols-outlined">download</span>
+            </button>
+          </div>
+        </div>
+        <h4 class="font-label-md text-center line-clamp-1">ជីវវិទ្យា គោលការណ៍គ្រឹះ</h4>
+      </div>
+
+      <div class="group cursor-pointer reveal" style="transition-delay: 200ms;">
+        <div class="aspect-[3/4] rounded-xl overflow-hidden soft-card-shadow mb-4 relative transition-transform group-hover:-translate-y-2">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD1HZ7J1XFVlUxGkeTgJHAx7g-ggVwHOw1R0U1QxM1NK-p8gCuMs-2yHdECz4k1tO-y85yp15SeVDb2gIMbhVNCuCG22DH3qXZg-WdCpbo_la4oNpG5noYjGP4Lwy3jDHjyQI-u8qIq_pjPloB3_z8kkE7EsAJgUNA_8x-6CIYgxH58pC7cWrL14v_W8Dr4eRJhHZYn1EwJS8TLVqenlRixJ0UquM5L84uudOnrkQyDjGW8IZ6arArSUpbJ_puT3F8q8XpFPMYq3RH" alt="Khmer literature book" />
+          <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <button class="w-12 h-12 bg-on-primary text-primary rounded-full flex items-center justify-center shadow-lg">
+              <span class="material-symbols-outlined">download</span>
+            </button>
+          </div>
+        </div>
+        <h4 class="font-label-md text-center line-clamp-1">អក្សរសាស្ត្រខ្មែរ</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== TEACHERS ====== -->
+<section class="py-20 md:py-32" id="teachers">
+  <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="text-center mb-16 reveal">
+      <h2 class="font-display-kh text-headline-lg mb-4">ក្រុមគ្រូបង្រៀន</h2>
+      <p class="text-secondary">ជួបជាមួយលោកគ្រូ អ្នកគ្រូដែលមានបទពិសោធន៍ និងការតាំងចិត្តខ្ពស់</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+
+      <div class="bg-surface-container-lowest p-6 rounded-2xl soft-card-shadow text-center reveal">
+        <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/10">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBItCSAtLaLbrJSn8_RwtCCbIf5AaSPHFObwO9FntZ7_BK14OIf41sEWqRFkCjZdONz2t7WB6i9d_67Ee8VYBE1KFOHQe6S5txdTE0BlCdCXSyE78Zxb1nB1OuxyCs2wh0qzK33mLzW7Y3BUDuPlXexqGIboERc0c9ashbBi4e9ehNLjjwBjo-mnfTpaA4Faw2tMR-nB7yKntyewceMkBSHEMYIgzp1Q1I8vyyqUmqWY-UPwf2G9NU48QXnONTqHNt9cBCM7uJRBMKc" alt="Teacher Sok Visal" />
+        </div>
+        <h3 class="font-headline-md text-lg mb-1">លោក សុខ វិសាល</h3>
+        <p class="text-primary font-bold text-sm mb-3">គណិតវិទ្យា</p>
+        <p class="text-secondary text-sm mb-4 leading-relaxed">បរិញ្ញាបត្រអប់រំ បទពិសោធន៍បង្រៀន ៥ ឆ្នាំនៅវិទ្យាល័យល្បីៗ។</p>
+        <div class="flex justify-center gap-3">
+          <span class="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-sm">person</span>
+          </span>
+          <span class="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-sm">chat</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="bg-surface-container-lowest p-6 rounded-2xl soft-card-shadow text-center reveal" style="transition-delay: 100ms;">
+        <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/10">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXzBSFcgYLiCj8Um39tBOMimksy--Z2_tyCNyNehij9AuyFjAvotFn0Nj-VOWd21T-u-7TbJCFBz3aaDIywMC1UbmCwsrP4mndxsoBhHHkUIrudcRvmBU3rd-g9YyKPQ_3nRdq5luEOegTmt_YfCUnNdp1c1EImFIIo9KeTHXIrvAdpnu2OLGymBsnWoULtZpGuqO1ilZAur5I42cVYw698RRHEBT0_Y_Txr-ShfbfM2Yw4-ZJpnaJpG9j-Z_lhsT7sbO8ZL2xbKaQ" alt="Teacher Chan Thida" />
+        </div>
+        <h3 class="font-headline-md text-lg mb-1">កញ្ញា ចាន់ ធីតា</h3>
+        <p class="text-primary font-bold text-sm mb-3">រូបវិទ្យា</p>
+        <p class="text-secondary text-sm mb-4 leading-relaxed">អនុបណ្ឌិតរូបវិទ្យា បទពិសោធន៍បង្រៀន ៤ ឆ្នាំ និងជំនាញពន្យល់ងាយយល់។</p>
+        <div class="flex justify-center gap-3">
+          <span class="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-sm">person</span>
+          </span>
+          <span class="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-sm">chat</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="bg-surface-container-lowest p-6 rounded-2xl soft-card-shadow text-center reveal" style="transition-delay: 200ms;">
+        <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/10">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD9AVUun5bEK985rodlwYpEWfMM9OhWcSUISK3ILMUS78U5tGrV_8K7_p5hhe67qekXDXs2ly-kE3ew8ZZfEE1rVf0Y2abCZCnTI8HRHiZ_3zqCzyq6IygE8F1JApZ1pItnrKNMVLnUxVoQBeTDktMjs-kKPUPVb18rSzan0DoYFmmsmeTjGBf2k7zgrUHvPoPusIfbPR9raI3L1k6FiHVu_7N4Sq7FBQWJ1J1bbyRbPKsjBq0ts5U_ujLNdc58O4Pwfft_ZyBOruR" alt="Teacher Kim Heng" />
+        </div>
+        <h3 class="font-headline-md text-lg mb-1">លោក គឹម ហេង</h3>
+        <p class="text-primary font-bold text-sm mb-3">គីមីវិទ្យា</p>
+        <p class="text-secondary text-sm mb-4 leading-relaxed">បរិញ្ញាបត្រគីមីវិទ្យា បទពិសោធន៍ ១០ ឆ្នាំក្នុងការត្រៀមសិស្សបាក់ឌុប។</p>
+        <div class="flex justify-center gap-3">
+          <span class="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-sm">person</span>
+          </span>
+          <span class="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-sm">chat</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="bg-surface-container-lowest p-6 rounded-2xl soft-card-shadow text-center reveal" style="transition-delay: 300ms;">
+        <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/10">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0dudzu98OmNvqPo4wmlhF5eijHrFXcnjhiBlnFRjwk5etjC-r2MtNjOi2ec0uYoF8G_MhA2E6N9Yn53cdWY-4RKLxj9bOiWBHdQjMuAq-Oz5EWt_uOUNMQa32K0tXYoI9YthLSzAbkprRy46Hmc9fBDnUWASqc9Pq_OZyiUK0XnWeJ5AT5r82fIWls_6LEVRkepahUgZoEXEc4Kf6AP0lAIgNY9nqc78_9l8TbzjirFqg86VJ6h7x2RPyfsEG7OCKMcKLKxxDsLuI" alt="Teacher Ly Nary" />
+        </div>
+        <h3 class="font-headline-md text-lg mb-1">អ្នកគ្រូ លី ណារី</h3>
+        <p class="text-primary font-bold text-sm mb-3">ជីវវិទ្យា</p>
+        <p class="text-secondary text-sm mb-4 leading-relaxed">អ្នកឯកទេសជីវវិទ្យា និងមានវិធីសាស្ត្របង្រៀនបែបទំនើប ទាក់ទាញ។</p>
+        <div class="flex justify-center gap-3">
+          <span class="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-sm">person</span>
+          </span>
+          <span class="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-sm">chat</span>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== SCHEDULE ====== -->
+<section class="py-20 md:py-32 bg-surface-container-low" id="schedule">
+  <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="text-center mb-16 reveal">
+      <h2 class="font-display-kh text-headline-lg mb-4">វេនសិក្សា និងតម្លៃ</h2>
+      <p class="text-secondary">តារាងពេលវេលាសិក្សាដែលអាចបត់បែនបានសម្រាប់សិស្សានុសិស្ស</p>
+    </div>
+
+    <div class="bg-surface-container-lowest rounded-2xl soft-card-shadow overflow-hidden reveal border border-outline-variant/30">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-primary text-on-primary">
+              <th class="p-6 font-headline-md text-base">វេនសិក្សា</th>
+              <th class="p-6 font-headline-md text-base">ម៉ោងសិក្សា</th>
+              <th class="p-6 font-headline-md text-base">កាលបរិច្ឆេទ</th>
+              <th class="p-6 font-headline-md text-base">តម្លៃសិក្សា</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-outline-variant/30">
+            <tr class="hover:bg-primary/5 transition-colors">
+              <td class="p-6 flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary">light_mode</span>
+                <span class="font-bold">វេនព្រឹក</span>
+              </td>
+              <td class="p-6 text-secondary">០៨:០០ - ១០:០០</td>
+              <td class="p-6 text-secondary">ច័ន្ទ - សុក្រ</td>
+              <td class="p-6 text-primary font-bold">$50 / ខែ</td>
+            </tr>
+            <tr class="hover:bg-primary/5 transition-colors">
+              <td class="p-6 flex items-center gap-3">
+                <span class="material-symbols-outlined text-tertiary">wb_sunny</span>
+                <span class="font-bold">វេនរសៀល</span>
+              </td>
+              <td class="p-6 text-secondary">០២:០០ - ០៤:០០</td>
+              <td class="p-6 text-secondary">ច័ន្ទ - សុក្រ</td>
+              <td class="p-6 text-primary font-bold">$60 / ខែ</td>
+            </tr>
+            <tr class="hover:bg-primary/5 transition-colors">
+              <td class="p-6 flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary">dark_mode</span>
+                <span class="font-bold">វេនយប់</span>
+              </td>
+              <td class="p-6 text-secondary">០៦:០០ - ០៨:០០</td>
+              <td class="p-6 text-secondary">ច័ន្ទ - សុក្រ</td>
+              <td class="p-6 text-primary font-bold">$80 / ខែ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ONLINE TESTS ====== -->
+<section class="py-20 md:py-32">
+  <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="flex flex-col md:flex-row items-center justify-between mb-16 gap-6 reveal">
+      <div class="text-center md:text-left">
+        <h2 class="font-display-kh text-headline-lg mb-2">តេស្តវាស់សមត្ថភាព</h2>
+        <p class="text-secondary">សាកល្បងសមត្ថភាពរបស់អ្នកជាមួយវិញ្ញាសាដែលយើងបានរៀបចំ</p>
+      </div>
+      <div class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl flex items-center gap-4">
+        <div class="flex -space-x-3">
+          <div class="w-10 h-10 rounded-full border-2 border-primary-container bg-surface-dim"></div>
+          <div class="w-10 h-10 rounded-full border-2 border-primary-container bg-surface-dim"></div>
+          <div class="w-10 h-10 rounded-full border-2 border-primary-container bg-surface-dim"></div>
+        </div>
+        <p class="text-label-md">+១៥០ នាក់បានធ្វើតេស្តរួចរាល់</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+
+      <div class="bg-surface-container-lowest p-8 rounded-2xl soft-card-shadow border-b-4 border-primary reveal">
+        <h3 class="font-headline-md text-lg mb-2">មេរៀនទី១ (Lesson 1)</h3>
+        <p class="text-secondary text-sm mb-6">វិញ្ញាសាពង្រឹងមូលដ្ឋានគ្រឹះដំបូង សម្រាប់គ្រប់មុខវិជ្ជា។</p>
+        <div class="flex justify-between items-center mb-6 text-sm text-secondary">
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">timer</span> ៣០ នាទី</span>
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">quiz</span> ១៥ សំណួរ</span>
+        </div>
+        <button class="w-full py-2.5 border-2 border-primary text-primary rounded-lg font-label-md hover:bg-primary hover:text-on-primary transition-all">ចាប់ផ្តើមតេស្ត</button>
+      </div>
+
+      <div class="bg-surface-container-lowest p-8 rounded-2xl soft-card-shadow border-b-4 border-primary reveal" style="transition-delay: 100ms;">
+        <h3 class="font-headline-md text-lg mb-2">មេរៀនទី២ (Lesson 2)</h3>
+        <p class="text-secondary text-sm mb-6">វិញ្ញាសាសាកល្បងការអនុវត្តលំហាត់កម្រិតមធ្យម។</p>
+        <div class="flex justify-between items-center mb-6 text-sm text-secondary">
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">timer</span> ៤៥ នាទី</span>
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">quiz</span> ២០ សំណួរ</span>
+        </div>
+        <button class="w-full py-2.5 border-2 border-primary text-primary rounded-lg font-label-md hover:bg-primary hover:text-on-primary transition-all">ចាប់ផ្តើមតេស្ត</button>
+      </div>
+
+      <div class="bg-surface-container-lowest p-8 rounded-2xl soft-card-shadow border-b-4 border-primary-fixed-variant reveal" style="transition-delay: 200ms;">
+        <h3 class="font-headline-md text-lg mb-2">Mid-term Test</h3>
+        <p class="text-secondary text-sm mb-6">វិញ្ញាសាប្រឡងពាក់កណ្តាលវគ្គ ដើម្បីត្រៀមខ្លួនសម្រាប់វគ្គបន្ត។</p>
+        <div class="flex justify-between items-center mb-6 text-sm text-secondary">
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">timer</span> ៩០ នាទី</span>
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">quiz</span> ៤០ សំណួរ</span>
+        </div>
+        <button class="w-full py-2.5 border-2 border-primary text-primary rounded-lg font-label-md hover:bg-primary hover:text-on-primary transition-all">ចាប់ផ្តើមតេស្ត</button>
+      </div>
+
+      <div class="bg-surface-container-lowest p-8 rounded-2xl soft-card-shadow border-b-4 border-error reveal" style="transition-delay: 300ms;">
+        <h3 class="font-headline-md text-lg mb-2">Final Test</h3>
+        <p class="text-secondary text-sm mb-6">វិញ្ញាសាបញ្ចប់វគ្គសិក្សា ដើម្បីទទួលបានវិញ្ញាបនបត្រ។</p>
+        <div class="flex justify-between items-center mb-6 text-sm text-secondary">
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">timer</span> ១២០ នាទី</span>
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">quiz</span> ៦០ សំណួរ</span>
+        </div>
+        <button class="w-full py-2.5 border-2 border-primary text-primary rounded-lg font-label-md hover:bg-primary hover:text-on-primary transition-all">ចាប់ផ្តើមតេស្ត</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== OUTSTANDING STUDENTS ====== -->
+<section class="py-20 md:py-32 bg-primary overflow-hidden relative">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-on-primary rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-on-primary rounded-full blur-[150px]"></div>
+  </div>
+
+  <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+    <div class="text-center mb-16 reveal">
+      <h2 class="font-display-kh text-headline-lg text-on-primary mb-4">សិស្សឆ្នើម និងអ្នកទទួលរង្វាន់</h2>
+      <p class="text-on-primary/80">មោទនភាពចំពោះលទ្ធផលសិក្សាដែលសម្រេចបានដោយសិស្សានុសិស្សរបស់យើង</p>
+    </div>
+
+    <div class="flex flex-nowrap overflow-x-auto gap-8 pb-8 no-scrollbar scroll-smooth snap-x">
+
+      <div class="min-w-[280px] md:min-w-[320px] bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 snap-center reveal">
+        <div class="aspect-square rounded-xl overflow-hidden mb-6">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVw0h0M_1YcwDpb5S1ZVW3JOjKvoJaemgVPS_iJCH8A4fuRnRiU9AwVQBdoZqFArK6Vjy1CzlYtEpgzLhU5fDkQVMg2SjRYatGORzcB3_qbuD8sfNx6UDNHkYeX9UfJGLMWpS2GYjHXwJJPFBzEJzh-9V2jv1_edibba6GpDqpV_MPQ-1bHMKHUs-Exq_m6g9RnGLvrdjiNvNh9mMJoanOohNXlsmfumN9CPlaYziu-E2E2ChxNeihZcetckSq9I_pKAJElFfHucXD" alt="Student Sok Mali" />
+        </div>
+        <h3 class="text-on-primary font-headline-md text-lg mb-1">កញ្ញា សុខ ម៉ាលី</h3>
+        <p class="text-on-primary/70 text-sm mb-4">សិស្សឆ្នើមលំដាប់លេខ ១ ប្រចាំឆ្នាំ ២០២៣</p>
+        <div class="flex items-center gap-2 text-on-primary text-sm bg-white/10 p-2 rounded-lg">
+          <span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+          អាហារូបករណ៍ ១០០% នៅសកលវិទ្យាល័យ
+        </div>
+      </div>
+
+      <div class="min-w-[280px] md:min-w-[320px] bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 snap-center reveal" style="transition-delay: 100ms;">
+        <div class="aspect-square rounded-xl overflow-hidden mb-6">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaoTXH_BYORQ2I7QXpBkJZNQKeG6qwg0ffax4dovYWCDr_RaAqkLpoO8HWnYmMN-jPYroYw9EF5ewVXpAKooOMfQ53skpFus-fl0LcZhivmAwoESnAL1iZLcCKXL6lY1B7gN_RgUtX-YBU06kJPPE9bX8p4hc7qVjxApN7ok4q3kdyG723D2LLPJWovViXRFkSo-v7bwlUJqaxGGNaFTqFVCjEGuF_eaP1YKunM1SRlVDYRORI-Cw1Brja8Ib__hAAmZLeU8A9I6kj" alt="Student Chan Dara" />
+        </div>
+        <h3 class="text-on-primary font-headline-md text-lg mb-1">លោក ចាន់ ដារ៉ា</h3>
+        <p class="text-on-primary/70 text-sm mb-4">ជ័យលាភីគណិតវិទ្យាថ្នាក់ខេត្ត</p>
+        <div class="flex items-center gap-2 text-on-primary text-sm bg-white/10 p-2 rounded-lg">
+          <span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+          មេដាយមាស គណិតវិទ្យា
+        </div>
+      </div>
+
+      <div class="min-w-[280px] md:min-w-[320px] bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 snap-center reveal" style="transition-delay: 200ms;">
+        <div class="aspect-square rounded-xl overflow-hidden mb-6">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIp2mFB1EVU05YdBsOGjLL1hyM-gjNvLODGDJSwXVHMpVBXXb_eWNpeWyjeJKXVEmoJwRH60b9ypkVeRQHlsFuG33lIhA31e3F2dTlfbB3KdjTTlir-_LrFV2Fyp_dCEp5aqfYXfupSSGL9FTSQNv18uM46aCzfM0nquASKSRbqP3mtbvhvne0T0e1AF_iyCHVmfK6XECHC2w-c3h7I1vz3661cCLvwucYzxpui5F6xod4o0ZoEEV7824Z0VDq6bih7PZxM6BLpuXm" alt="Student Heng Veasna" />
+        </div>
+        <h3 class="text-on-primary font-headline-md text-lg mb-1">លោក ហេង វាសនា</h3>
+        <p class="text-on-primary/70 text-sm mb-4">និស្សិតឆ្នើម ប្រឡងបាក់ឌុបនិទ្ទេស A</p>
+        <div class="flex items-center gap-2 text-on-primary text-sm bg-white/10 p-2 rounded-lg">
+          <span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+          និទ្ទេស A គ្រប់មុខវិជ្ជា
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== TESTIMONIALS ====== -->
+<section class="py-20 md:py-32">
+  <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="text-center mb-16 reveal">
+      <h2 class="font-display-kh text-headline-lg mb-4">មតិយោបល់ពីសិស្ស</h2>
+      <p class="text-secondary">អ្វីដែលសិស្សានុសិស្ស និងអាណាព្យាបាលបានលើកឡើងពីយើង</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+
+      <div class="bg-surface-container-lowest p-8 rounded-2xl soft-card-shadow reveal border border-outline-variant/20 relative">
+        <span class="material-symbols-outlined text-[64px] absolute top-4 right-4 text-primary/5 select-none" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+        <div class="flex gap-1 mb-4 text-yellow-500">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+        </div>
+        <p class="text-secondary italic mb-8 leading-relaxed">"តាំងពីមករៀននៅមជ្ឈមណ្ឌលនេះមក ខ្ញុំមានអារម្មណ៍ថាចំណេះដឹងគណិតវិទ្យារបស់ខ្ញុំរីកចម្រើនខ្លាំង។ លោកគ្រូពន្យល់បានច្បាស់ៗ និងងាយយល់ណាស់។"</p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-surface-dim overflow-hidden">
+            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_fQ-TaWwKYYYeIXs8C_CsAKtL6uRsSYHc5fa6nAsN9gWMOKViq3dYAaoGdtIwEFRySIv-REYDjbusKXU52hi951lQCGy1Qe9AZkhVjuPZAxRYrhpAPjBtXY3uRPNhfnYH3xz2JKlOIDpmqNN7QfeMknmBkRe55oMOQWz8XEC2SifkhdsXoXwabF8I8TpDOXbg71n6z-kIlDBPuEmwD7AU5v3ku-ZGJW1YZ_jWftpyKszKdK2EUouQxnM3YzH7MyeUOGz2DVv6s1MC" alt="Student Sok Nary" />
+          </div>
+          <div>
+            <h4 class="font-bold text-sm">សុខ ណារី</h4>
+            <p class="text-xs text-secondary">សិស្សថ្នាក់ទី១២</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-surface-container-lowest p-8 rounded-2xl soft-card-shadow reveal border border-outline-variant/20 relative" style="transition-delay: 100ms;">
+        <span class="material-symbols-outlined text-[64px] absolute top-4 right-4 text-primary/5 select-none" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+        <div class="flex gap-1 mb-4 text-yellow-500">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+        </div>
+        <p class="text-secondary italic mb-8 leading-relaxed">"ក្នុងនាមជាអាណាព្យាបាល ខ្ញុំពិតជាពេញចិត្តនឹងការតាមដានការសិក្សារបស់សាលា។ កូនរបស់ខ្ញុំមានទំនុកចិត្តជាងមុនក្នុងកិច្ចការសាលា។"</p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-surface-dim overflow-hidden">
+            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGzYVHeYVBMIeoFQZ67n4aVrEzHeaDPOwaOoKsD-LQc36NwhlzuG4LSKa66X0DrlV7j9mm0Ap6U-64bcE2Ql8_7WR4lUf2-aLCRKHVWHPtpi2nNVl_OYfSoc7E0aUVXT7L7wNi3vH52lUB8fiY2OEorTcqmSEW0rsGgdVKvXe0ezEOrFb2kVie5fxBG71xAiLFGJz6quqici9Q7uUQG7aCpzDoX3pxi1UJykDpuwrza0UdR7gPk62LoqiEyZrY1NWPJ_5izvBGthRC" alt="Parent Chan Tha" />
+          </div>
+          <div>
+            <h4 class="font-bold text-sm">អ្នកស្រី ចាន់ថា</h4>
+            <p class="text-xs text-secondary">អាណាព្យាបាលសិស្ស</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-surface-container-lowest p-8 rounded-2xl soft-card-shadow reveal border border-outline-variant/20 relative" style="transition-delay: 200ms;">
+        <span class="material-symbols-outlined text-[64px] absolute top-4 right-4 text-primary/5 select-none" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+        <div class="flex gap-1 mb-4 text-yellow-500">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+        </div>
+        <p class="text-secondary italic mb-8 leading-relaxed">"មេរៀនស្របតាមកម្មវិធីសិក្សា និងមានលំហាត់អនុវត្តច្រើន ដែលជួយឱ្យខ្ញុំត្រៀមខ្លួនបានល្អសម្រាប់ការប្រឡងបាក់ឌុបដែលជិតមកដល់។"</p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-surface-dim overflow-hidden">
+            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuEfLgadqFBfyG5hv3uzBQi_MVJ0nBuNmskj7jqB3vomTwvG4fUxWZYlZO549Uju_0oz59xlIpOlF7uBabudBwpHx1s9BXp4jWzjJp_vhkwo0MELL2gWZ8Rx0o3Icu-BIdxmHO_NNSs-OJBgrIMM1_e8kxDDDYae_NAznEj2jGDVG3_xR_hRivGGGCgqGHp35sTixQj9gXt5DT2NJP662HYTiDAnp6HdbN1mGR-kZ7UXyejQgX0-2JM8WVkJIpYlPo4ZyUhgekf2bM" alt="Student Kim Socheat" />
+          </div>
+          <div>
+            <h4 class="font-bold text-sm">គឹម សុជាតិ</h4>
+            <p class="text-xs text-secondary">សិស្សថ្នាក់ទី១២</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== CONTACT & REGISTRATION ====== -->
+<section class="py-20 md:py-32 bg-surface-container-low" id="register">
+  <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+      <!-- contact info -->
+      <div class="reveal">
+        <h2 class="font-display-kh text-headline-lg mb-6">ទំនាក់ទំនង និងចុះឈ្មោះ</h2>
+        <p class="text-secondary mb-10 leading-relaxed">ប្រសិនបើលោកអ្នកមានចម្ងល់ ឬចង់សាកសួរព័ត៌មានបន្ថែម សូមទំនាក់ទំនងមកកាន់យើងតាមរយៈព័ត៌មានខាងក្រោម ឬបំពេញទម្រង់ចុះឈ្មោះ។</p>
+
+        <div class="space-y-6">
+          <div class="flex items-center gap-6 p-4 bg-surface-container-lowest rounded-xl soft-card-shadow">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined">call</span>
+            </div>
+            <div>
+              <p class="text-xs text-secondary uppercase font-bold tracking-wider mb-1">ទូរស័ព្ទ</p>
+              <p class="font-body-lg text-primary font-bold">012 345 678 / 098 765 432</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6 p-4 bg-surface-container-lowest rounded-xl soft-card-shadow">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined">send</span>
+            </div>
+            <div>
+              <p class="text-xs text-secondary uppercase font-bold tracking-wider mb-1">Telegram</p>
+              <p class="font-body-lg text-primary font-bold">@success_learning_center</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6 p-4 bg-surface-container-lowest rounded-xl soft-card-shadow">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined">location_on</span>
+            </div>
+            <div>
+              <p class="text-xs text-secondary uppercase font-bold tracking-wider mb-1">អាសយដ្ឋាន</p>
+              <p class="font-body-md text-secondary">ផ្លូវលេខ ១២៣, សង្កាត់បឹងកេងកង១, ខណ្ឌបឹងកេងកង, ភ្នំពេញ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- registration form -->
+      <div class="bg-surface-container-lowest p-8 md:p-12 rounded-3xl soft-card-shadow reveal" style="transition-delay: 200ms;">
+        <form class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="text-label-md text-secondary ml-1">ឈ្មោះពេញ</label>
+              <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary transition-all" placeholder="បញ្ចូលឈ្មោះរបស់អ្នក" type="text" />
+            </div>
+            <div class="space-y-2">
+              <label class="text-label-md text-secondary ml-1">លេខទូរស័ព្ទ</label>
+              <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary transition-all" placeholder="បញ្ចូលលេខទូរស័ព្ទ" type="tel" />
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-label-md text-secondary ml-1">កម្រិតសិក្សា (ថ្នាក់ទី)</label>
+            <select class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary transition-all text-secondary">
+              <option>ថ្នាក់ទី ១០</option>
+              <option>ថ្នាក់ទី ១១</option>
+              <option>ថ្នាក់ទី ១២</option>
+              <option>កម្រិតផ្សេងៗ</option>
+            </select>
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-label-md text-secondary ml-1">ជ្រើសរើសវគ្គសិក្សា</label>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <label class="cursor-pointer">
+                <input class="peer hidden" name="course" type="radio" />
+                <div class="p-3 text-center border-2 border-outline-variant rounded-xl peer-checked:border-primary peer-checked:bg-primary/5 transition-all text-sm">កម្រិតមូលដ្ឋាន</div>
+              </label>
+              <label class="cursor-pointer">
+                <input class="peer hidden" name="course" type="radio" />
+                <div class="p-3 text-center border-2 border-outline-variant rounded-xl peer-checked:border-primary peer-checked:bg-primary/5 transition-all text-sm">កម្រិតមធ្យម</div>
+              </label>
+              <label class="cursor-pointer">
+                <input class="peer hidden" name="course" type="radio" />
+                <div class="p-3 text-center border-2 border-outline-variant rounded-xl peer-checked:border-primary peer-checked:bg-primary/5 transition-all text-sm">កម្រិតខ្ពស់</div>
+              </label>
+            </div>
+          </div>
+
+          <button class="w-full bg-primary text-on-primary py-4 rounded-xl font-headline-md text-lg hover:bg-primary-container shadow-lg transition-all active:scale-95 mt-4" type="submit">
+            ចុះឈ្មោះ
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="bg-surface-container dark:bg-inverse-surface py-16">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+
+    <div class="space-y-6">
+      <h2 class="font-display-kh text-headline-md text-primary">មជ្ឈមណ្ឌលបង្រៀនគួរ ឆ្ពោះទៅជោគជ័យ</h2>
+      <p class="text-secondary dark:text-secondary-fixed-dim leading-relaxed">យើងប្តេជ្ញាផ្តល់ជូននូវការអប់រំដែលមានគុណភាពខ្ពស់ និងជួយឱ្យសិស្សានុសិស្សសម្រេចបាននូវគោលដៅអនាគតរបស់ពួកគេ។</p>
+      <div class="flex gap-4">
+        <a class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform" href="#">
+          <span class="material-symbols-outlined text-[20px]">face_nod</span>
+        </a>
+        <a class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform" href="#">
+          <span class="material-symbols-outlined text-[20px]">alternate_email</span>
+        </a>
+        <a class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform" href="#">
+          <span class="material-symbols-outlined text-[20px]">group</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="md:ml-auto">
+      <h3 class="font-headline-md text-lg mb-6">តំណភ្ជាប់រហ័ស</h3>
+      <ul class="space-y-4">
+        <li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-colors" href="#courses">វគ្គសិក្សាទាំងអស់</a></li>
+        <li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-colors" href="#books">បណ្ណាល័យឯកសារ</a></li>
+        <li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-colors" href="#teachers">ក្រុមការងារគ្រូបង្រៀន</a></li>
+        <li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-colors" href="#schedule">វេនសិក្សា និងតម្លៃ</a></li>
+      </ul>
+    </div>
+
+    <div class="md:ml-auto">
+      <h3 class="font-headline-md text-lg mb-6">ព័ត៌មានបន្ថែម</h3>
+      <ul class="space-y-4">
+        <li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-colors" href="#">លក្ខខណ្ឌប្រើប្រាស់</a></li>
+        <li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-colors" href="#">គោលការណ៍ឯកជនភាព</a></li>
+        <li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-colors" href="#">សំណួរដែលសួរញឹកញាប់</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop mt-16 pt-8 border-t border-outline-variant/30 text-center">
+    <p class="text-secondary dark:text-secondary-fixed-dim text-sm">© ២០២៤ មជ្ឈមណ្ឌលបង្រៀនគួរ ឆ្ពោះទៅជោគជ័យ។ រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+  </div>
+</footer>
+
+<!-- ====== JAVASCRIPT ====== -->
+<script>
+  // Reveal animations on scroll
+  function reveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    const windowHeight = window.innerHeight;
+    const elementVisible = 150;
+
+    reveals.forEach(el => {
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - elementVisible) {
+        el.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', reveal);
+  // initial check
+  reveal();
+
+  // Navbar shadow on scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      nav.classList.add('shadow-md');
+      nav.classList.remove('shadow-sm');
+    } else {
+      nav.classList.add('shadow-sm');
+      nav.classList.remove('shadow-md');
+    }
+  });
+</script>
+
+</body>
+</html>
